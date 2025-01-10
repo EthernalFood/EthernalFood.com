@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EthernalFood</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>EthernalFood</h1>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="intro">
+      <h2>Temukan Berbagai Resep Makanan Untuk Keluarga Anda</h2>
+    </section>
+</body>
+</html>
+
+  <!-- Bagian Utama -->
+  <main>
+    <!-- Kartu Resep -->
+    <section class="resep-card">
+      <img src="cake.png" alt="Gambar Resep">
+      <h2>5 Resep Birthday Cake Simple Tapi Elegan</h2>
+      <p>Ada banyak resep cake yang bisa dibuat sendiri di rumah, Kita pun bisa membuat sendiri cake yang simple tapi elegan.</p>
+      
+      <button class="btn-resep">
+      <a href="cake.html" class="a-navbar">Lihat Resep</a>
+      </button>
+      
+    </section>
+
+    <section class="resep-card">
+      <img src="nasi.png" alt="Gambar Resep">
+      <h2>5 Resep Nasi Goreng Sederhana Hingga Spesial</h2>
+      <p>Ada banyak variasi resep nasi goreng yang bisa kamu coba di rumah. Beberapa di antaranya lebih sehat dan rendah kalori.</p>
+      
+      <button class="btn-resep">
+        <a href="nasi.html" class="a-navbar">Lihat Resep</a>
+    </button>
+  
+    </section>
+
+    <section class="resep-card">
+      <img src="sulawesi.png" alt="Gambar Resep">
+      <h2>5 Resep Makanan Khas Sulawesi Selatan</h2>
+      <p>Setiap daerah di Indonesia memiliki ciri khusus dalam budaya kuliner mereka. Sulawesi pun memiliki beragam kuliner yang memiliki cita rasa otentik.</p>
+      
+      <button class="btn-resep">
+        <a href="sulawesi.html" class="a-navbar">Lihat Resep</a>
+      
+      </button>
+    </section>
+
+    <section class="resep-card">
+      <img src="ayam.png" alt="Gambar Resep">
+      <h2>5 Resep Olahan Ayam Yang Lezat</h2>
+      <p>Olahan ayam adalah hidangan lezat dan serbaguna yang dapat disajikan dengan berbagai bumbu dan cara memasak, menghasilkan cita rasa yang kaya dan memanjakan selera.</p>
+      <button class="btn-resep">
+        <a href="ayam.html" class="a-navbar">Lihat Resep</a> 
+      </button>
+    </section>
+
+<section class="resep-card">
+  <img src="moza.png" alt="Gambar Resep">
+  <h2>5 Resep Jajanan Berbahan Dasar Mozarella</h2>
+  <p>Mozzarella adalah bahan yang sangat populer untuk membuat berbagai jajanan lezat karena teksturnya yang lembut dan mudah meleleh ketika dipanaskan</p>
+  <button class="btn-resep">
+    <a href="moza.html" class="a-navbar">Lihat Resep</a> 
+  </button>
+</section>
+
+<section class="resep-card">
+  <img src="mochi.png" alt="Gambar Resep">
+  <h2>5 Resep Mochi</h2>
+  <p>Mochi adalah kue tradisional Jepang berbahan dasar tepung beras ketan yang memiliki tekstur kenyal dan lembut. Mochi sering kali diisi dengan berbagai isian seperti kacang merah, cokelat, atau es krim, menjadikannya camilan yang digemari banyak orang.</p>
+  <button class="btn-resep">
+    <a href="mochi.html" class="a-navbar">Lihat Resep</a>
+  </button>
+</section>
+  </main>
+
+
+<footer>
+  <h3>Ikuti Kami</h3>
+  <div class="social-media">
+    <a href="https://www.facebook.com/profile.php?id=100092397909284&mibextid=ZbWKwL="_blank">Facebook</a>
+    <a href="https://www.tiktok.com/@ayayaaaaawwww?_t=ZS-8svw718Naba&_r=1" target="_blank">Tiktok</a>
+    <a href="https://www.instagram.com/luucyyyyy_/profilecard/?igsh=MWV4MjE0eDVuZXh3cg== target="_blank">Instagram</a>
+    <a href="https://youtube.com/@dewiasriningsih121?si=HdZqLU3KqlttMW7f target="_blank">YouTube</a>
+  </div>
+
+<p>Ini adalah website resep makanan yang menarik. Berikan komentar terbaik Anda!</p>
+
+<div class="reaction-buttons">
+  <button onclick="addReaction('like')">👍 Suka</button>
+  <button onclick="addReaction('dislike')">👎 Tidak Suka</button>
+  <button onclick="toggleCommentSection()">💬 Komentar</button>
+</div>
+
+<div class="comments-section" id="comments-section" style="display: none">
+  <h3>Komentar</h3>
+  <input type="text" id="comment-input" placeholder="Tulis komentar..." />
+  <button onclick="addComment()">Kirim</button>
+  <div id="comments-list"></div>
+</div>
+
+<script>
+  let likeCount = 0;
+  let dislikeCount = 0;
+
+  function addReaction(type) {
+    if (type === "like") {
+      likeCount++;
+      alert("Anda menyukai artikel ini! Total suka: " + likeCount);
+    } else if (type === "dislike") {
+      dislikeCount++;
+      alert(
+        "Anda tidak menyukai artikel ini! Total tidak suka: " + dislikeCount
+      );
+    }
+  }
+
+  function toggleCommentSection() {
+    const commentsSection = document.getElementById("comments-section");
+    commentsSection.style.display =
+      commentsSection.style.display === "none" ? "block" : "none";
+  }
+
+  function addComment() {
+    const commentInput = document.getElementById("comment-input");
+    const commentsList = document.getElementById("comments-list");
+
+    if (commentInput.value.trim() !== "") {
+      const newComment = document.createElement("div");
+      newComment.className = "comment";
+      newComment.textContent = commentInput.value;
+      commentsList.appendChild(newComment);
+      commentInput.value = ""; // Clear input
+    } else {
+      alert("Komentar tidak boleh kosong!");
+    }
+  }
+
+  
+</script>
+</body>
+</html>
+
+</footer>
